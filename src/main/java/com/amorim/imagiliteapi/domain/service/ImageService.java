@@ -1,12 +1,18 @@
-package com.amorim.imagiliteapi.service;
+package com.amorim.imagiliteapi.domain.service;
+
 
 import com.amorim.imagiliteapi.domain.entity.Image;
-import org.springframework.stereotype.Service;
+import com.amorim.imagiliteapi.domain.enums.ImageExtension;
 
-@Service
-public abstract class ImageService {
+import java.util.List;
+import java.util.Optional;
 
-    Image sabe(Image image)
+public interface  ImageService {
+    Image save(Image image);
 
-    public abstract Image save(Image image);
+    Optional<Image> getById(String id);
+
+    List<Image> search (ImageExtension extension, String query);
+
+
 }
